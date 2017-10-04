@@ -1,0 +1,50 @@
+{
+    "name": "lukeyouell/craft3-geocookie",
+    "description": "Collect information about a visitor's location based on their IP address and store the information as a cookie.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "geo cookie"
+    ],
+    "support": {
+        "docs": "https://github.com/lukeyouell/craft3-geocookie/blob/master/README.md",
+        "issues": "https://github.com/lukeyouell/craft3-geocookie/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Youell",
+            "homepage": "https://github.com/lukeyouell"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "~3.0.0-beta.23"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "lukeyouell\\geocookie\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Geo Cookie",
+        "handle": "geo-cookie",
+        "schemaVersion": "1.0.0",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/lukeyouell/craft3-geocookie/master/CHANGELOG.md",
+        "components": {
+            "geoCookieService": "lukeyouell\\geocookie\\services\\GeoCookieService"
+        },
+        "class": "lukeyouell\\geocookie\\GeoCookie"
+    }
+}

@@ -1,0 +1,108 @@
+{#
+/**
+ * Geo Cookie plugin for Craft CMS 3.x
+ *
+ * Geo Cookie Settings.twig
+ *
+ * @author    Luke Youell
+ * @copyright Copyright (c) 2017 Luke Youell
+ * @link      https://github.com/lukeyouell
+ * @package   GeoCookie
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{{ forms.lightswitchField({
+  first: true,
+  label: 'IP Anonymisation'|t,
+  instructions: 'Set the last octet of IPv4 user IP addresses and the last 80 bits of IPv6 addresses to zero. The full IP address is never exposed to third-parties.'|t,
+  id: 'anonymisation',
+  name: 'anonymisation',
+  on: settings.anonymisation
+}) }}
+
+{{ forms.selectField({
+    label: 'API Source'|t,
+    instructions: 'The API endpoint Geo Cookie will use to source the visitor\'s location.'|t,
+    id: 'apiSource',
+    name: 'apiSource',
+    options: {
+      dbip: 'db-ip.com (key required)',
+      extremeiplookup: 'extreme-ip-lookup.com',
+      freegeoip: 'freegeoip.net',
+      ipapicom: 'ip-api.com',
+      ipapi: 'ipapi.co (default)',
+      ipfind: 'ipfind.co',
+      ipinfo: 'ipinfo.io',
+      keycdn: 'keycdn.com'
+    },
+    value: settings.apiSource,
+    required: true
+  })
+}}
+
+{{ forms.textField({
+    label: 'API Key'|t,
+    instructions: 'To be used if the chosen API source requires an API key.'|t,
+    id: 'apiKey',
+    name: 'apiKey',
+    placeholder: 'API key',
+    value: settings.apiKey
+  })
+}}
+
+{{ forms.selectField({
+    label: 'Request Timeout'|t,
+    instructions: 'The number of seconds to allow for the request to take place before timing out.'|t,
+    id: 'requestTimeout',
+    name: 'requestTimeout',
+    options: {
+      0: 'Indefinitely (not recommended)',
+      1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10
+    },
+    value: settings.requestTimeout,
+    required: true
+  })
+}}
+
+{{ forms.textField({
+    label: 'Fallback IP Address'|t,
+    instructions: 'This will be used if Geo Cookie is unable to source the visitor\'s IP address.'|t,
+    id: 'fallbackIp',
+    name: 'fallbackIp',
+    placeholder: '8.8.8.8',
+    value: settings.fallbackIp,
+    required: true
+  })
+}}
+
+{{ forms.textField({
+    label: 'Cookie Name'|t,
+    instructions: 'The name of the cookie to be stored in the visitor\'s browser.'|t,
+    id: 'cookieName',
+    name: 'cookieName',
+    placeholder: 'geoCookie',
+    value: settings.cookieName,
+    required: true
+  })
+}}
+
+{{ forms.selectField({
+    label: 'Cookie Duration'|t,
+    instructions: 'The length of time the cookie will be stored in the visitor\'s browser.'|t,
+    id: 'cookieDuration',
+    name: 'cookieDuration',
+    options: {
+      1: '1 hour',
+      24: '1 day',
+      168: '1 week',
+      672: '1 month',
+      4368: '6 months',
+      8736: '1 year'
+    },
+    value: settings.cookieDuration,
+    required: true
+  })
+}}
