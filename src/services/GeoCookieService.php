@@ -198,7 +198,7 @@ class GeoCookieService extends Component
 
            $clientUrl = 'https://ipfind.co';
 
-           $clientPath = '?ip='.$ipAddress;
+           $clientPath = '?ip='.$ipAddress.'&auth='.$settings->apiKey;
 
            break;
 
