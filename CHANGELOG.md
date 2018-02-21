@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.4 - 2018-02-21
+
+### Added
+- Added `apiKey` to the https://ipfind.co request
+
 ## 1.0.3 - 2018-02-09
 
 ### Changed
