@@ -80,7 +80,7 @@ The current options are:
 
 #### Setting the Variable
 
-`{% set location = craft.geoCookie.location() %}`
+`{% set location = geocookie() %}`
 
 The `location` variable gives you access to the geolocation data.
 
