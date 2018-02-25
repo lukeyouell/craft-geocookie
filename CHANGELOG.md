@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+### Added
+- Added `geocookie()` twig extension
+
 ### Changed
 - Set Craft CMS minimum requirement to `^3.0.0-RC11`
 
