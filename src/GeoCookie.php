@@ -13,6 +13,7 @@ namespace lukeyouell\geocookie;
 use lukeyouell\geocookie\services\GeoCookieService as GeoCookieServiceService;
 use lukeyouell\geocookie\variables\GeoCookieVariable;
 use lukeyouell\geocookie\models\Settings;
+use lukeyouell\geocookie\twigextensions\GeoCookieTwigExtension;
 
 use Craft;
 use craft\base\Plugin;
@@ -53,6 +54,8 @@ class GeoCookie extends Plugin
     {
         parent::init();
         self::$plugin = $this;
+        
+        Craft::$app->view->registerTwigExtension(new GeoCookieTwigExtension());
 
         Event::on(
             CraftVariable::class,
