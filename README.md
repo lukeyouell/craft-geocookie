@@ -1,3 +1,5 @@
+<img src="src/icon.svg" alt="icon" width="100" height="100">
+
 # Geo Cookie plugin for Craft CMS 3.x
 
 Collect information about a visitor's location based on their IP address and store the information as a cookie.
