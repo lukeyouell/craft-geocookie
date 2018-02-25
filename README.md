@@ -4,7 +4,7 @@ Collect information about a visitor's location based on their IP address and sto
 
 ## Requirements
 
-This plugin requires Craft CMS 3.x.
+This plugin requires Craft CMS 3.0.0-RC11 or later.
 
 ## Installation
 
