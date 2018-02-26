@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+### Added
+- `3 months` cookie duration option
+
+### Changed
+- Refactored settings
+- Settings template tweaks
+
 ## 1.0.5 - 2018-02-25
 
 ### Added
