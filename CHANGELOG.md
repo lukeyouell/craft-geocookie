@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Refactored settings
 - Settings template tweaks
+- Icon updated
 
 ## 1.0.5 - 2018-02-25
 
