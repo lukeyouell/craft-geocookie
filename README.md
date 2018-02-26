@@ -292,6 +292,36 @@ To check if a cookie exists simply use `location.cached` which will return a boo
 }
 ```
 
+## Overriding Plugin Settings
+
+If you create a [config file](https://craftcms.com/docs/config-settings) in your `config` folder called `geo-cookie.php`, you can override the plugin’s settings in the Control Panel. Since that config file is fully [multi-environment](https://craftcms.com/docs/multi-environment-configs) aware, this is a handy way to have different settings across multiple environments.
+
+Here’s what that config file might look like along with a list of all of the possible values you can override.
+
+```php
+<?php
+
+return [
+    'anonymisation'  => true,
+    'apiSource'      => 'keycdn',
+    'apiKey'         => 'lLyl85arR3nT04T4WDt5AVBJrPTBRjUk',
+    'requestTimeout' => 4,
+    'fallbackIp'     => '8.8.8.8',
+    'cookieName'     => 'geoCookieName',
+    'cookieDuration' => 168,
+];
+```
+
+| Parameter | Expected Value |
+| --------- | -------------- |
+| `anonymisation` | Boolean |
+| `apiSource` | `extremeiplookup`, `freegeoip`, `ipapi`, `ipapi.com`, `ipfind`, `ipinfo`, `keycdn` or `db-ip` |
+| `apiKey` | API key for chosen source |
+| `requestTimeout` | Integer (seconds) |
+| `fallbackIp` | Valid IP address |
+| `cookieName` | Cookie name |
+| `cookieDuration` | Integer (hours) | 
+
 ## Debugging
 
 You can dump the API response by using `{{ dump(location) }}`
