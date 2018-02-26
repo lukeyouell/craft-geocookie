@@ -34,7 +34,7 @@ class Settings extends Model
      * @var string
      */
      public $apiSourceOptions = [
-       ['optgroup' => 'Key not required'],
+       ['optgroup' => 'API Key not required'],
        ['value' => 'extremeiplookup', 'label' => 'extreme-ip-lookup.com'],
        ['value' => 'freegeoip', 'label' => 'freegeoip.net'],
        ['value' => 'ipapi', 'label' => 'ipapi.co'],
@@ -42,7 +42,7 @@ class Settings extends Model
        ['value' => 'ipfind', 'label' => 'ipfind.co'],
        ['value' => 'ipinfo', 'label' => 'ipnfo.io'],
        ['value' => 'keycdn', 'label' => 'keycdn.com'],
-       ['optgroup' => 'Key required'],
+       ['optgroup' => 'API Key required'],
        ['value' => 'dbip', 'label' => 'db-ip.com'],
      ];
 
