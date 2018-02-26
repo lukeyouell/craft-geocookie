@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## 1.1.0 - 2018-02-26
 
 ### Added
 - Multi-environment support
@@ -12,6 +12,9 @@ All notable changes to this project will be documented in this file.
 - Refactored settings
 - Settings template tweaks
 - Icon updated
+
+### Removed
+- Redundant translations file
 
 ## 1.0.5 - 2018-02-25
 
