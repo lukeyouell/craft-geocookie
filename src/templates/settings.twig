@@ -23,21 +23,14 @@
   on: settings.anonymisation
 }) }}
 
+<hr>
+
 {{ forms.selectField({
     label: 'API Source'|t,
     instructions: 'The API endpoint Geo Cookie will use to source the visitor\'s location.'|t,
     id: 'apiSource',
     name: 'apiSource',
-    options: {
-      dbip: 'db-ip.com (key required)',
-      extremeiplookup: 'extreme-ip-lookup.com',
-      freegeoip: 'freegeoip.net',
-      ipapicom: 'ip-api.com',
-      ipapi: 'ipapi.co (default)',
-      ipfind: 'ipfind.co',
-      ipinfo: 'ipinfo.io',
-      keycdn: 'keycdn.com'
-    },
+    options: settings.apiSourceOptions,
     value: settings.apiSource,
     required: true
   })
@@ -53,15 +46,14 @@
   })
 }}
 
+<hr>
+
 {{ forms.selectField({
     label: 'Request Timeout'|t,
     instructions: 'The number of seconds to allow for the request to take place before timing out.'|t,
     id: 'requestTimeout',
     name: 'requestTimeout',
-    options: {
-      0: 'Indefinitely (not recommended)',
-      1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10
-    },
+    options: settings.requestTimeoutOptions,
     value: settings.requestTimeout,
     required: true
   })
@@ -77,6 +69,8 @@
     required: true
   })
 }}
+
+<hr>
 
 {{ forms.textField({
     label: 'Cookie Name'|t,
@@ -94,14 +88,7 @@
     instructions: 'The length of time the cookie will be stored in the visitor\'s browser.'|t,
     id: 'cookieDuration',
     name: 'cookieDuration',
-    options: {
-      1: '1 hour',
-      24: '1 day',
-      168: '1 week',
-      672: '1 month',
-      4368: '6 months',
-      8736: '1 year'
-    },
+    options: settings.cookieDurationOptions,
     value: settings.cookieDuration,
     required: true
   })
