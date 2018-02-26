@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## Unreleased
 
 ### Added
+- Multi-environment support
 - `3 months` cookie duration option
 
 ### Changed
