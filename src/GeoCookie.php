@@ -54,7 +54,7 @@ class GeoCookie extends Plugin
     {
         parent::init();
         self::$plugin = $this;
-        
+
         Craft::$app->view->registerTwigExtension(new GeoCookieTwigExtension());
 
         Event::on(
@@ -103,10 +103,18 @@ class GeoCookie extends Plugin
      */
     protected function settingsHtml(): string
     {
+        // Get and pre-validate the settings
+        $settings = $this->getSettings();
+        $settings->validate();
+
+        // Get the settings that are being defined by the config file
+        $overrides = Craft::$app->getConfig()->getConfigFromFile(strtolower($this->handle));
+
         return Craft::$app->view->renderTemplate(
             'geo-cookie/settings',
             [
-                'settings' => $this->getSettings()
+                'settings' => $settings,
+                'overrides' => array_keys($overrides)
             ]
         );
     }
