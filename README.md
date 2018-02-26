@@ -324,7 +324,11 @@ return [
 
 ## Debugging
 
-You can dump the API response by using `{{ dump(location) }}`
+You can dump the API response: 
+
+```twig
+<pre>{{ location|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
+```
 
 _Development mode must be turned on in Craft for this to work._
 
