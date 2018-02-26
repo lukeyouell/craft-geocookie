@@ -14,82 +14,106 @@
 
 {% import "_includes/forms" as forms %}
 
+{% macro configWarning(setting) -%}
+  {% set setting = '<code>' ~ setting ~ '</code>' %}
+  {{ 'This is being overridden by the {setting} config setting in your {file} config file.'|t('geo-cookie', {
+      setting: setting,
+      file:    'geo-cookie.php'
+  })|raw }}
+{%- endmacro %}
+
+{% from _self import configWarning %}
+
 {{ forms.lightswitchField({
-  first: true,
-  label: 'IP Anonymisation'|t,
+  first:         true,
+  label:        'IP Anonymisation'|t,
   instructions: 'Set the last octet of IPv4 user IP addresses and the last 80 bits of IPv6 addresses to zero. The full IP address is never exposed to third-parties.'|t,
-  id: 'anonymisation',
-  name: 'anonymisation',
-  on: settings.anonymisation
+  id:           'anonymisation',
+  name:         'anonymisation',
+  on:           settings.anonymisation,
+  disabled:     'anonymisation' in overrides,
+  warning:      'anonymisation' in overrides ? configWarning('anonymisation')
 }) }}
 
 <hr>
 
 {{ forms.selectField({
-    label: 'API Source'|t,
+    required:     true,
+    label:        'API Source'|t,
     instructions: 'The API endpoint Geo Cookie will use to source the visitor\'s location.'|t,
-    id: 'apiSource',
-    name: 'apiSource',
-    options: settings.apiSourceOptions,
-    value: settings.apiSource,
-    required: true
+    id:           'apiSource',
+    name:         'apiSource',
+    options:      settings.apiSourceOptions,
+    value:        settings.apiSource,
+    disabled:     'apiSource' in overrides,
+    warning:      'apiSource' in overrides ? configWarning('apiSource')
   })
 }}
 
 {{ forms.textField({
-    label: 'API Key'|t,
+    label:        'API Key'|t,
     instructions: 'To be used if the chosen API source requires an API key.'|t,
-    id: 'apiKey',
-    name: 'apiKey',
-    placeholder: 'API key',
-    value: settings.apiKey
+    id:           'apiKey',
+    name:         'apiKey',
+    placeholder:  'API key',
+    value:        settings.apiKey,
+    disabled:     'apiKey' in overrides,
+    warning:      'apiKey' in overrides ? configWarning('apiKey')
   })
 }}
 
 <hr>
 
 {{ forms.selectField({
-    label: 'Request Timeout'|t,
+    required:     true,
+    label:        'Request Timeout'|t,
     instructions: 'The number of seconds to allow for the request to take place before timing out.'|t,
-    id: 'requestTimeout',
-    name: 'requestTimeout',
-    options: settings.requestTimeoutOptions,
-    value: settings.requestTimeout,
-    required: true
+    id:           'requestTimeout',
+    name:         'requestTimeout',
+    options:      settings.requestTimeoutOptions,
+    value:        settings.requestTimeout,
+    disabled:     'requestTimeout' in overrides,
+    warning:      'requestTimeout' in overrides ? configWarning('requestTimeout')
   })
 }}
 
 {{ forms.textField({
-    label: 'Fallback IP Address'|t,
+    required:     true,
+    label:        'Fallback IP Address'|t,
     instructions: 'This will be used if Geo Cookie is unable to source the visitor\'s IP address.'|t,
-    id: 'fallbackIp',
-    name: 'fallbackIp',
-    placeholder: '8.8.8.8',
-    value: settings.fallbackIp,
-    required: true
+    id:           'fallbackIp',
+    name:         'fallbackIp',
+    placeholder:  '8.8.8.8',
+    value:        settings.fallbackIp,
+    disabled:     'fallbackIp' in overrides,
+    warning:      'fallbackIp' in overrides ? configWarning('fallbackIp')
   })
 }}
 
 <hr>
 
 {{ forms.textField({
-    label: 'Cookie Name'|t,
+    required:     true,
+    label:        'Cookie Name'|t,
     instructions: 'The name of the cookie to be stored in the visitor\'s browser.'|t,
-    id: 'cookieName',
-    name: 'cookieName',
-    placeholder: 'geoCookie',
-    value: settings.cookieName,
-    required: true
+    id:           'cookieName',
+    name:         'cookieName',
+    placeholder:  'geoCookie',
+    value:        settings.cookieName,
+    disabled:     'cookieName' in overrides,
+    warning:      'cookieName' in overrides ? configWarning('cookieName')
   })
 }}
 
 {{ forms.selectField({
-    label: 'Cookie Duration'|t,
+    required:     'true',
+    label:        'Cookie Duration'|t,
     instructions: 'The length of time the cookie will be stored in the visitor\'s browser.'|t,
-    id: 'cookieDuration',
-    name: 'cookieDuration',
-    options: settings.cookieDurationOptions,
-    value: settings.cookieDuration,
-    required: true
+    id:           'cookieDuration',
+    name:         'cookieDuration',
+    options:      settings.cookieDurationOptions,
+    value:        settings.cookieDuration,
+    disabled:     'cookieDuration' in overrides,
+    warning:      'cookieDuration' in overrides ? configWarning('cookieDuration')
   })
 }}
