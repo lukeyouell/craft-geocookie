@@ -320,17 +320,17 @@ return [
 | `requestTimeout` | Integer (seconds) |
 | `fallbackIp` | Valid IP address |
 | `cookieName` | Cookie name |
-| `cookieDuration` | Integer (hours) | 
+| `cookieDuration` | Integer (hours) |
 
 ## Debugging
 
-You can dump the API response: 
+You can dump the API response:
 
 ```twig
 <pre>{{ location|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
 ```
 
-_Development mode must be turned on in Craft for this to work._
+Errors are now logged. Simply search your logs for `geocookie`.
 
 ## Geo Cookie Roadmap
 
