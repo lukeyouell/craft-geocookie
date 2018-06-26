@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.0 - 2018-06-26
+
+### Added
+- Error logging
+
+### Changed
+- Code formatting
+
 ## 1.1.2 - 2018-04-16
 
 ### Changed
