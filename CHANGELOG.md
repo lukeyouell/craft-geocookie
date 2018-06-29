@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.1 - 2018-06-29
+
+### Fixed
+- Corrected API endpoint for ipapi.co
+
 ## 1.2.0 - 2018-06-26
 
 ### Added

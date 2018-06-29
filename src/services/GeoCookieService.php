@@ -119,7 +119,7 @@ class GeoCookieService extends Component
                  break;
 
              case 'ipapi':
-                 $clientUrl = 'https://ipapi.com';
+                 $clientUrl = 'https://ipapi.co';
                  $clientPath = $ipAddress.'/json';
                  break;
 
