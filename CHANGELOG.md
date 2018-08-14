@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.2 - 2018-08-14
+
+### Added
+- [IP Vigilante](https://www.ipvigilante.com) support
+
 ## 1.2.1 - 2018-06-29
 
 ### Fixed

@@ -41,6 +41,7 @@ There are currently 8 different API's to choose from:
 - [ipapi.co](https://ipapi.co) (default)
 - [ipfind.co](https://ipfind.co)
 - [ipinfo.io](https://ipinfo.io)
+- [ipvigilante.com](https://ipvigilante.com)
 - [keycdn.com](https://tools.keycdn.com/geo)
 
 #### API Key
@@ -259,6 +260,24 @@ To check if a cookie exists simply use `location.cached` which will return a boo
   "org": "AS15169 Google Inc.",
   "postal": "94035",
   "phone": "650"
+}
+```
+
+##### [ipvigilante.com](https://ipvigilante.com)
+
+```json
+{  
+  "status": "success",
+  "data": {  
+    "ipv4": "8.8.8.8",
+    "continent_name": "North America",
+    "country_name": "United States",
+    "subdivision_1_name": "California",
+    "subdivision_2_name": null,
+    "city_name": "Mountain View",
+    "latitude": "37.38600",
+    "longitude": "-122.08380"
+  }
 }
 ```
 

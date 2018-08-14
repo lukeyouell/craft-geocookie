@@ -25,15 +25,6 @@ use craft\web\twig\variables\CraftVariable;
 
 use yii\base\Event;
 
-/**
- * Class GeoCookie
- *
- * @author    Luke Youell
- * @package   GeoCookie
- * @since     1.0.0
- *
- * @property  GeoCookieServiceService $geoCookieService
- */
 class GeoCookie extends Plugin
 {
     // Static Properties
@@ -76,31 +67,16 @@ class GeoCookie extends Plugin
                 }
             }
         );
-
-        Craft::info(
-            Craft::t(
-                'geo-cookie',
-                '{name} plugin loaded',
-                ['name' => $this->name]
-            ),
-            __METHOD__
-        );
     }
 
     // Protected Methods
     // =========================================================================
 
-    /**
-     * @inheritdoc
-     */
     protected function createSettingsModel()
     {
         return new Settings();
     }
 
-    /**
-     * @inheritdoc
-     */
     protected function settingsHtml(): string
     {
         // Get and pre-validate the settings
