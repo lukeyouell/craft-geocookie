@@ -138,6 +138,11 @@ class GeoCookieService extends Component
                  $clientPath = $ipAddress.'/json';
                  break;
 
+             case 'ipvigilante':
+                 $clientUrl = 'https://ipvigilante.com';
+                 $clientPath = $ipAddress;
+                 break;
+
              case 'keycdn':
                  $clientUrl = 'https://tools.keycdn.com';
                  $clientPath = 'geo.json?host='.$ipAddress;
