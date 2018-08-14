@@ -24,6 +24,8 @@
 
 {% from _self import configWarning %}
 
+<h2 class="first">Anonymisation</h2>
+
 {{ forms.lightswitchField({
   first:         true,
   label:        'IP Anonymisation'|t,
@@ -36,6 +38,8 @@
 }) }}
 
 <hr>
+
+<h2 class="first">API Source</h2>
 
 {{ forms.selectField({
     required:     true,
@@ -63,6 +67,8 @@
 }}
 
 <hr>
+
+<h2 class="first">Cookie</h2>
 
 {{ forms.selectField({
     required:     true,
