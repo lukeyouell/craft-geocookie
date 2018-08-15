@@ -24,6 +24,21 @@
 
 {% from _self import configWarning %}
 
+<h2 class="first">Logging</h2>
+
+{{ forms.lightswitchField({
+  first:         true,
+  label:        'Enable Logging'|t,
+  instructions: 'Log initial location requests and make them available in the [utilities section]('~ cpUrl('utilities/geo-cookies') ~').'|t,
+  id:           'logging',
+  name:         'logging',
+  on:           settings.logging,
+  disabled:     'logging' in overrides,
+  warning:      'logging' in overrides ? configWarning('logging')
+}) }}
+
+<hr>
+
 <h2 class="first">Anonymisation</h2>
 
 {{ forms.lightswitchField({

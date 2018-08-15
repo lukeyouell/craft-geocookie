@@ -50,10 +50,14 @@ class Log extends Utility
      */
     public static function contentHtml(): string
     {
+
+        $settings = GeoCookie::$plugin->getSettings();
+
         return Craft::$app->getView()->renderTemplate(
             'geo-cookie/utility',
             [
-                'logs' => self::getLogs()
+                'settings' => $settings,
+                'logs'     => self::getLogs()
             ]
         );
     }
