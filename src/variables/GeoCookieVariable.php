@@ -14,24 +14,13 @@ use lukeyouell\geocookie\GeoCookie;
 
 use Craft;
 
-/**
- * @author    Luke Youell
- * @package   GeoCookie
- * @since     1.0.0
- */
 class GeoCookieVariable
 {
     // Public Methods
     // =========================================================================
 
-    /**
-     * @param null $optional
-     * @return string
-     */
      public function location()
      {
-
-         return GeoCookie::$plugin->geoCookieService->location();
-
+         return GeoCookie::$plugin->geoService->location();
      }
 }

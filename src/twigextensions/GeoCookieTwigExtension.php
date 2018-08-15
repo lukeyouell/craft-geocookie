@@ -14,27 +14,22 @@ use lukeyouell\geocookie\GeoCookie;
 
 use Craft;
 
-/**
- * @author    Luke Youell
- * @package   GeoCookie
- * @since     1.1.0
- */
 class GeoCookieTwigExtension extends \Twig_Extension
 {
-  public function getName()
-  {
-      return 'Geo Cookie';
-  }
+    public function getName()
+    {
+        return 'Geo Cookie';
+    }
 
-  public function getFunctions()
-  {
-      return [
-          new \Twig_SimpleFunction('geocookie', [$this, 'geocookie']),
-      ];
-  }
+    public function getFunctions()
+    {
+        return [
+            new \Twig_SimpleFunction('geocookie', [$this, 'geocookie']),
+        ];
+    }
 
-  public function geocookie()
-  {
-      return GeoCookie::$plugin->geoCookieService->location();
-  }
+    public function geocookie()
+    {
+        return GeoCookie::$plugin->geoService->location();
+    }
 }
