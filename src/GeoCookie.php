@@ -67,6 +67,12 @@ class GeoCookie extends Plugin
                 }
             }
         );
+
+        // Register components
+        $this->setComponents([
+            'geoService' => \lukeyouell\geocookie\services\GeoService::class,
+            'logService' => \lukeyouell\geocookie\services\LogService::class,
+        ]);
     }
 
     // Protected Methods
