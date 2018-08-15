@@ -37,7 +37,7 @@ class GeoCookie extends Plugin
     // Public Properties
     // =========================================================================
 
-    public $schemaVersion = '1.1.0';
+    public $schemaVersion = '1.1.1';
 
     // Public Methods
     // =========================================================================

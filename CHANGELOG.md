@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.3.1 - 2018-08-15
+
+### Fixed
+- Incorrect column data type
+
 ## 1.3.0 - 2018-08-15
 
 ### Added
