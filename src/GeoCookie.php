@@ -32,17 +32,11 @@ class GeoCookie extends Plugin
     // Static Properties
     // =========================================================================
 
-    /**
-     * @var GeoCookie
-     */
     public static $plugin;
 
     // Public Methods
     // =========================================================================
 
-    /**
-     * @inheritdoc
-     */
     public function init()
     {
         parent::init();

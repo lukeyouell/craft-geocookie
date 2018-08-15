@@ -24,9 +24,6 @@ class Log extends ActiveRecord
     // Public Methods
     // =========================================================================
 
-    /**
-     * @inheritdoc
-     */
     public static function tableName(): string
     {
         return '{{%geocookie_log}}';
