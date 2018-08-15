@@ -321,6 +321,7 @@ Here’s what that config file might look like along with a list of all of the p
 <?php
 
 return [
+    'logging'        => true,
     'anonymisation'  => true,
     'apiSource'      => 'keycdn',
     'apiKey'         => 'lLyl85arR3nT04T4WDt5AVBJrPTBRjUk',
@@ -333,8 +334,9 @@ return [
 
 | Parameter | Expected Value |
 | --------- | -------------- |
+| `logging` | Boolean |
 | `anonymisation` | Boolean |
-| `apiSource` | `extremeiplookup`, `freegeoip`, `ipapi`, `ipapi.com`, `ipfind`, `ipinfo`, `keycdn` or `db-ip` |
+| `apiSource` | `extremeiplookup`, `freegeoip`, `ipapi`, `ipapi.com`, `ipfind`, `ipinfo`, 'ipvigilante', `keycdn` or `db-ip` |
 | `apiKey` | API key for chosen source |
 | `requestTimeout` | Integer (seconds) |
 | `fallbackIp` | Valid IP address |
