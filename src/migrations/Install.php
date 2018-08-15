@@ -66,7 +66,7 @@ class Install extends Migration
                     // Custom columns in the table
                     'status'      => $this->string(),
                     'source'      => $this->string(),
-                    'data'        => $this->string(),
+                    'data'        => $this->text(),
                 ]
             );
         }
