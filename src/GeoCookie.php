@@ -10,16 +10,18 @@
 
 namespace lukeyouell\geocookie;
 
-use lukeyouell\geocookie\services\GeoCookieService as GeoCookieServiceService;
-use lukeyouell\geocookie\variables\GeoCookieVariable;
 use lukeyouell\geocookie\models\Settings;
 use lukeyouell\geocookie\twigextensions\GeoCookieTwigExtension;
+use lukeyouell\geocookie\utilities\Log;
+use lukeyouell\geocookie\variables\GeoCookieVariable;
 
 use Craft;
 use craft\base\Plugin;
-use craft\services\Plugins;
 use craft\events\PluginEvent;
+use craft\events\RegisterComponentTypesEvent;
 use craft\helpers\UrlHelper;
+use craft\services\Plugins;
+use craft\services\Utilities;
 use craft\web\Request;
 use craft\web\twig\variables\CraftVariable;
 
@@ -49,22 +51,20 @@ class GeoCookie extends Plugin
         Craft::$app->view->registerTwigExtension(new GeoCookieTwigExtension());
 
         Event::on(
-            CraftVariable::class,
-            CraftVariable::EVENT_INIT,
-            function (Event $event) {
-                /** @var CraftVariable $variable */
-                $variable = $event->sender;
-                $variable->set('geoCookie', GeoCookieVariable::class);
-            }
-        );
-
-        Event::on(
             Plugins::class,
             Plugins::EVENT_AFTER_INSTALL_PLUGIN,
             function (PluginEvent $event) {
                 if ($event->plugin === $this) {
                     Craft::$app->getResponse()->redirect(UrlHelper::cpUrl('settings/plugins/geo-cookie'))->send();
                 }
+            }
+        );
+
+        Event::on(
+            Utilities::class,
+            Utilities::EVENT_REGISTER_UTILITY_TYPES,
+            function (RegisterComponentTypesEvent $event) {
+                $event->types[] = Log::class;
             }
         );
 

@@ -1,0 +1,41 @@
+{% if logs %}
+  <div class="tableview">
+    <table class="data fullwidth collapsible">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Source</th>
+          <th>Data</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for log in logs %}
+          <tr>
+            <td class="thin">
+              <span class="status {{
+                  log.status == 'success' ? 'green' :
+                  log.status == 'fail' ? 'red' :
+                  'light' }}"></span>
+            </td>
+            <td>
+              {{ log.source|default('Undefined') }}
+            </td>
+            <td>
+              {{ log.dateCreated|datetime }}
+            </td>
+            <td>
+              <a href="#">Show data</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <pre>{{ log.data|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
+        {% endfor %}
+      </tbody>
+    </table>
+  </table>
+{% else %}
+  There are no events to display.
+{% endif %}
