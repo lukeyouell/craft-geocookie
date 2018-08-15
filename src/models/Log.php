@@ -14,6 +14,7 @@ use lukeyouell\geocookie\records\Log as LogRecord;
 
 use Craft;
 use craft\base\Model;
+use craft\helpers\Json;
 
 class Log extends Model
 {
@@ -33,6 +34,13 @@ class Log extends Model
     // Public Methods
     // =========================================================================
 
+    public function init()
+    {
+        parent::init();
+
+        $this->data = $this->setData();
+    }
+
     public function __toString()
     {
         return (string) $this->source;
@@ -44,5 +52,10 @@ class Log extends Model
             [['status', 'source', 'data'], 'required'],
             [['status'], 'in', 'range' => [LogRecord::STATUS_SUCCESS, LogRecord::STATUS_FAIL]],
         ];
+    }
+
+    public function setData()
+    {
+        return Json::decode($this->data);
     }
 }
