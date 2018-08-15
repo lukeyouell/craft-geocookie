@@ -25,14 +25,10 @@ class Settings extends Model
     // Public Properties
     // =========================================================================
 
-    /**
-     * @var bool
-     */
+     public $logging = true;
+
      public $anonymisation = true;
 
-    /**
-     * @var string
-     */
      public $apiSourceOptions = [
        ['optgroup' => 'API Key not required'],
        ['value' => 'extremeiplookup', 'label' => 'extreme-ip-lookup.com'],
@@ -47,19 +43,10 @@ class Settings extends Model
        ['value' => 'dbip', 'label' => 'db-ip.com'],
      ];
 
-    /**
-     * @var string
-     */
      public $apiSource = 'ipapi';
 
-    /**
-     * @var string
-     */
      public $apiKey = null;
 
-    /**
-     * @var string
-     */
      public $requestTimeoutOptions = [
        ['value' => 0, 'label' => 'Indefinitely (not recommended)'],
        ['value' => 1, 'label' => '1'],
@@ -74,24 +61,12 @@ class Settings extends Model
        ['value' => 10, 'label' => '10'],
      ];
 
-    /**
-     * @var integer
-     */
      public $requestTimeout = 5;
 
-    /**
-     * @var string
-     */
      public $fallbackIp = '8.8.8.8';
 
-    /**
-     * @var string
-     */
      public $cookieName = 'geoCookie';
 
-    /**
-     * @var string
-     */
      public $cookieDurationOptions = [
        ['value' => 1, 'label' => '1 hour'],
        ['value' => 24, 'label' => '1 day'],
@@ -102,21 +77,15 @@ class Settings extends Model
        ['value' => 8736, 'label' => '1 year'],
      ];
 
-    /**
-     * @var integer
-     */
      public $cookieDuration = 168;
 
     // Public Methods
     // =========================================================================
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
       return [
-          ['anonymisation', 'boolean'],
+          [['logging', 'anonymisation'], 'boolean'],
           [['apiSource', 'apiKey', 'fallbackIp', 'cookieName'], 'string'],
           [['requestTimeout', 'cookieDuration'], 'integer'],
           [['apiSource', 'requestTimeout', 'fallbackIp', 'cookieName', 'cookieDuration'], 'required']

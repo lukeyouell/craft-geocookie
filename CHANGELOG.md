@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.3.0 - 2018-08-15
+
+### Added
+- Initial location requests can now be logged and viewed from the 'Utilities' section
+- Logging can be disabled in the settings
+
+### Changed
+- `GeoCookieService` has been renamed to `GeoService`
+- Housekeeping
+
 ## 1.2.2 - 2018-08-14
 
 ### Added

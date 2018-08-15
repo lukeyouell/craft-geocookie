@@ -8,19 +8,24 @@
  * @copyright Copyright (c) 2017 Luke Youell
  */
 
-namespace lukeyouell\geocookie\variables;
+namespace lukeyouell\geocookie\records;
 
-use lukeyouell\geocookie\GeoCookie;
+use craft\db\ActiveRecord;
 
-use Craft;
-
-class GeoCookieVariable
+class Log extends ActiveRecord
 {
+    // Constants
+    // =========================================================================
+
+    const STATUS_SUCCESS = 'success';
+
+    const STATUS_FAIL = 'fail';
+
     // Public Methods
     // =========================================================================
 
-     public function location()
-     {
-         return GeoCookie::$plugin->geoService->location();
-     }
+    public static function tableName(): string
+    {
+        return '{{%geocookie_log}}';
+    }
 }

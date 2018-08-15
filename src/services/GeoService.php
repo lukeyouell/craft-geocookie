@@ -11,11 +11,12 @@
 namespace lukeyouell\geocookie\services;
 
 use lukeyouell\geocookie\GeoCookie;
+use lukeyouell\geocookie\records\Log as LogRecord;
 
 use Craft;
 use craft\base\Component;
 
-class GeoCookieService extends Component
+class GeoService extends Component
 {
     // Public Methods
     // =========================================================================
@@ -40,6 +41,9 @@ class GeoCookieService extends Component
              $apiSource = $settings->apiSource;
              $location = $this->getLocation($settings, $ipAddress);
              // $location->cached = false;
+
+             // Log this
+             GeoCookie::$plugin->logService->insertLog(LogRecord::STATUS_SUCCESS, $apiSource, $location);
 
              return $location;
          }

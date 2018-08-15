@@ -1,0 +1,55 @@
+{% if settings.logging %}
+  {% if logs %}
+    <div class="tableview">
+      <table class="data fullwidth collapsible">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Source</th>
+            <th>Date</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for log in logs %}
+            <tr>
+              <td class="thin">
+                <span class="status {{
+                    log.status == 'success' ? 'green' :
+                    log.status == 'fail' ? 'red' :
+                    'light' }}"></span>
+              </td>
+              <td>
+                {{ log.source|default('Undefined') }}
+              </td>
+              <td>
+                {{ log.dateCreated|datetime }}
+              </td>
+              <td class="thin">
+                <div class="btn submit data-toggle" data-target="#data-row-{{ loop.index }}">Show data</div>
+              </td>
+            </tr>
+            <tr id="data-row-{{ loop.index }}" style="display:none;">
+              <td colspan="4">
+                <pre class="code" style="padding:1rem;background-color:#f9f9f9">{{ log.data|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </table>
+  {% else %}
+    There are no events to display.
+  {% endif %}
+
+  {% js %}
+  $('.data-toggle').on('click', function() {
+    var target = $(this).data('target');
+
+    $(target).toggle();
+  });
+  {% endjs %}
+{% else %}
+  Logging is disabled.
+{% endif %}
