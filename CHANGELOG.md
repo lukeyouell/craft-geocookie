@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.3.3 - 2018-09-12
+
+### Fixed
+- Custom table prefixes weren't supported when fetching logs
+
 ## 1.3.2 - 2018-08-15
 
 ### Fixed

@@ -2,7 +2,7 @@
     "name": "lukeyouell/craft-geocookie",
     "description": "Collect information about a visitor's location based on their IP address and store the information as a cookie.",
     "type": "craft-plugin",
-    "version": "1.3.2",
+    "version": "1.3.3",
     "keywords": [
         "craft",
         "cms",
