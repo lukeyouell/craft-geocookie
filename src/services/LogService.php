@@ -99,11 +99,11 @@ class LogService extends Component
     {
         return (new Query())
             ->select([
-                'geocookie_log.id',
-                'geocookie_log.dateCreated',
-                'geocookie_log.status',
-                'geocookie_log.source',
-                'geocookie_log.data',
+                '{{%geocookie_log}}.id',
+                '{{%geocookie_log}}.dateCreated',
+                '{{%geocookie_log}}.status',
+                '{{%geocookie_log}}.source',
+                '{{%geocookie_log}}.data',
             ])
             ->orderBy('dateCreated desc')
             ->from(['{{%geocookie_log}}']);
