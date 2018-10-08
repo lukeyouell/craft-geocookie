@@ -154,7 +154,7 @@ class GeoService extends Component
 
              default:
                  $clientUrl = 'https://ipapi.co';
-                 $clientPath = $ipAddress.'/json';
+                 $clientPath = $ipAddress.'/json/?key='.$settings->apiKey;
 
        }
 
