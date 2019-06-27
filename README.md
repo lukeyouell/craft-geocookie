@@ -39,7 +39,7 @@ There are currently 8 different API's to choose from:
 - [freegeoip.net](https://freegeoip.net)
 - [ip-api.com](http://ip-api.com)
 - [ipapi.co](https://ipapi.co) (default)
-- [ipfind.co](https://ipfind.co)
+- [ipfind.com](https://ipfind.com)
 - [ipinfo.io](https://ipinfo.io)
 - [ipvigilante.com](https://ipvigilante.com)
 - [keycdn.com](https://tools.keycdn.com/geo)
@@ -225,7 +225,7 @@ To check if a cookie exists simply use `location.cached` which will return a boo
 }
 ```
 
-##### [ipfind.co](https://ipfind.co)
+##### [ipfind.com](https://ipfind.com)
 
 ```json
 {

@@ -133,7 +133,7 @@ class GeoService extends Component
                  break;
 
              case 'ipfind':
-                 $clientUrl = 'https://ipfind.co';
+                 $clientUrl = 'https://api.ipfind.com';
                  $clientPath = '?ip='.$ipAddress.'&auth='.$settings->apiKey;
                  break;
 
