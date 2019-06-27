@@ -35,7 +35,7 @@ class Settings extends Model
        ['value' => 'freegeoip', 'label' => 'freegeoip.net'],
        ['value' => 'ipapi', 'label' => 'ipapi.co'],
        ['value' => 'ipapicom', 'label' => 'ip-api.com'],
-       ['value' => 'ipfind', 'label' => 'ipfind.co'],
+       ['value' => 'ipfind', 'label' => 'ipfind.com'],
        ['value' => 'ipinfo', 'label' => 'ipinfo.io'],
        ['value' => 'ipvigilante', 'label' => 'ipvigilante.com'],
        ['value' => 'keycdn', 'label' => 'keycdn.com'],
