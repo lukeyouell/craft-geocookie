@@ -32,14 +32,17 @@ class GeoService extends Component
 
          if ($cookie) {
              // Cookie already exists, so set the location as the cookie value and set 'cached' to true to show that the cookie already existed
-             $location = $cookie->value;
+             $location = @unserialize($cookie->value);
+             if ($location === false) {
+               $location = $cookie->value;
+             }
              $location->cached = true;
 
              return $location;
          } else {
              // Cookie doesn't exist, so fetch the user's location using api source and store it as a cookie, set 'cached' to false to show that the cookie didn't exist
              $apiSource = $settings->apiSource;
-             $location = $this->getLocation($settings, $ipAddress);
+             $location = unserialize($this->getLocation($settings, $ipAddress));
              // $location->cached = false;
 
              // Log this
@@ -175,7 +178,7 @@ class GeoService extends Component
 
                $cookies->add(new \yii\web\Cookie([
                    'name' => $settings->cookieName,
-                   'value' => $location,
+                   'value' => serialize($location),
                    // current timestamp + (cookieDuration setting in hours x number of seconds in an hour)
                    'expire' => time() + ($settings->cookieDuration * 3600)
                ]));
