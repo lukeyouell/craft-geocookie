@@ -118,8 +118,8 @@ class GeoService extends Component
                  break;
 
              case 'freegeoip':
-                 $clientUrl = 'https://freegeoip.net';
-                 $clientPath = 'json/'.$ipAddress;
+                 $clientUrl = 'http://api.ipstack.com/';
+                 $clientPath = $ipAddress.'/'.$settings->apiKey;
                  break;
 
              case 'ipapi':
