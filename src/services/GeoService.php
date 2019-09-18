@@ -119,7 +119,7 @@ class GeoService extends Component
 
              case 'freegeoip':
                  $clientUrl = 'http://api.ipstack.com/';
-                 $clientPath = $ipAddress.'/'.$settings->apiKey;
+                 $clientPath = $ipAddress.'?access_key='.$settings->apiKey;
                  break;
 
              case 'ipapi':
